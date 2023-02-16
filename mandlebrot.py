@@ -45,9 +45,9 @@ xrange = abs(rangeX[0]-rangeX[1])
 yrange = abs(rangeY[0]-rangeY[1])
 resolution = 500/min(xrange/3,yrange/3)
 width, height = round(xrange*resolution), round(yrange*resolution)
-infRange = 100
-accuracy = 500
-col = (127,255,127)#white
+infRange = 150
+accuracy = 750
+col = (64,255,64)#white
 #col = (86, 29, 201)#purple
 #col = (127,0,0)#maroon
 
@@ -61,7 +61,7 @@ def j(cord,cord2,x,y,surface):
         count = count+1
         cord = ((cord[0]*cord[0])-(cord[1]*cord[1]) + cord2[0],(2*cord[0]*cord[1]) + cord2[1])
         continue
-    thing = clamp(count/(accuracy/4),0,1)
+    thing = clamp(count/(accuracy/6),0,1)
     surface.set_at((x, y), (thing*col[0],thing*col[1],thing*col[2]))
     return
 
